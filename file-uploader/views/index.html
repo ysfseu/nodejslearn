@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Example</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.min.js"></script>
+    <script src="javascripts/scan.js"></script>
+</head>
+
+<body>
+    <!-- Learn about this code on MDN: https://developer.mozilla.org/en-US/docs/Web/API/FileSystemDirectoryReader/readEntries -->
+    <p>Drag files and/or directories to the box below!</p>
+    <div id="dropzone">
+        <div id="boxtitle">
+            Drop Files Here
+        </div>
+    </div>
+    <h2>Directory tree:</h2>
+    <ul id="listing">
+    </ul>  
+    <!--script>
+    window.resolveLocalFileSystemURL = window.resolveLocalFileSystemURL ||
+        window.webkitResolveLocalFileSystemURL;
+
+    var worker = new Worker('javascripts/worker.js');
+    worker.onmessage = function(e) {
+        var urls = e.data.entries;
+        urls.forEach(function(url, i) {
+            window.resolveLocalFileSystemURL(url, function(fileEntry) {
+                console.log(fileEntry.name); // Print out file's name.
+            });
+        });
+    };
+
+    worker.postMessage({
+        'cmd': 'list'
+    });
+    </script-->
+</body>
+
+</html>
